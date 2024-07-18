@@ -1,0 +1,10 @@
+username:shweta password:shweta
+Name:shweta  Email:shwetasingh00089@gmail.com  Phone no.:9873492300
+username:ff password:ff
+Name:f  Email:f@f.com  Phone no.:14
+username:manish password:manish
+Name:manish  Email:asdfg@hehe.com  Phone no.:23456789
+username:rini password:rini
+Name:rini  Email:fg  Phone no.:5678
+username:harsh password:harsh
+Name:harsh  Email:harsh@mgmail.com  Phone no.:9876

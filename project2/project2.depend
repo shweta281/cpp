@@ -1,0 +1,5 @@
+# depslib dependency file v1.0
+1721317977 source:c:\users\gmani\desktop\project2\main.cpp
+	<iostream>
+	<fstream>
+
