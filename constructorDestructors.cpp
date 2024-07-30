@@ -11,7 +11,7 @@ class p{
         }
     ~p(){
         delete(num);
-        cout<<"object destroyed"<<endl;
+        cout<<"object destroyed"<<endl; // dynamically alloted space need to freed in destructor
         }
     };
     
