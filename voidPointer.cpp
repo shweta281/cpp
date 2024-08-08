@@ -5,6 +5,6 @@ int main(){
     int* p=&a;
     void* ptr=&a;
     cout<<p<<" "<<ptr<<endl;
-    // cout<<*ptr; not allowed, void pointers cannot be derefereced 
+    // cout<<*(int*)*ptr;  void pointers cannot be derefereced directly
     cout<<*p<<endl;
     }
