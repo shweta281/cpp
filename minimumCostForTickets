@@ -1,0 +1,43 @@
+class Solution {
+public:
+    int helper(vector<int>& days, vector<int>& costs, int n, int i){
+        if(i>=n){
+            return 0;
+        }
+        cout<<days[i]<<endl;
+        int ans=INT_MAX;
+        for (int j=0; j<3; j++){
+            int day=days[i];
+            if(j==1) day+=6;
+            if(j==2) day+=29;
+            int curr=i;
+            while(curr<n && day>=days[curr]){
+                curr++;
+            }
+            ans = min( ans, helper(days, costs, n, curr)+costs[j]);
+        }
+        return ans;
+    }
+    int mincostTickets(vector<int>& days, vector<int>& costs) {
+        int n=days.size();
+        // return helper(days, costs, n, 0);
+        vector<int> tab(n+1, 0);
+        for (int i=n-1; i>=0; i--){
+            int ans=INT_MAX;
+            for (int j=0; j<3; j++){
+                int day=days[i];
+                // cout<<day<<endl;
+                if(j==1) day+=6;
+                if(j==2) day+=29;
+                int curr=i;
+                while(curr<n && day>=days[curr]){
+                    curr++;
+                }
+                ans = min( ans, tab[curr]+costs[j]);
+            }
+            tab[i]=ans;
+            cout<<ans<<endl;
+        }
+        return tab[0];
+    }
+};
