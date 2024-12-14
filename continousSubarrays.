@@ -1,0 +1,27 @@
+class Solution {
+public:
+// 1 + 2 + 2 + 3
+    long long continuousSubarrays(vector<int>& nums) {
+        priority_queue<pair<int, int> > pq1;
+        priority_queue<pair<int, int> > pq2;
+        int i = 0, j = 0, n = nums.size();
+        long long ans = 0;
+        while(j < n){
+            while(!pq1.empty() && pq1.top().second < i){
+                pq1.pop();
+            }
+            while(!pq2.empty() && pq2.top().second < i){
+                pq2.pop();
+            }
+            pq1.push({nums[j], j});
+            pq2.push({-1 * nums[j], j});
+            if(abs(pq1.top().first - (-1 *pq2.top().first)) > 2){
+                i++;
+                continue;
+            }
+            ans += (j - i + 1); 
+            j++;
+        }
+        return ans;
+    }
+};
